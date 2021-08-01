@@ -58,7 +58,7 @@ namespace ListPluginsPlugin
             // Colorize name to avoid confusion with comma-d names
             var colorTag = $"[c/{Color.Purple}:";
             var plugins = ServerApi.Plugins.Select(p => $"{colorTag}{p.Plugin.Name.Replace("]", $"]{colorTag}]")}]");
-            var result = string.Join(" ,", plugins);
+            var result = string.Join(", ", plugins);
             args.Player.SendInfoMessage(result);
         }
     }
