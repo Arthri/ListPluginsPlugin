@@ -54,8 +54,14 @@ namespace ListPluginsPlugin
 
         private void ListPlugins(CommandArgs args)
         {
+            // It's in ABGR format
+            var color = Color.Purple.packedValue;
+
+            // Flip color, because Terraria uses RGB
+            color = ((color & 0x000000FF) << 16) | (color & 0x0000FF00) | ((color & 0x00FF0000) >> 16);
+
             // Colorize name to avoid confusion with comma-d names
-            var colorTag = $"[c/{Color.Purple}:";
+            var colorTag = $"[c/{color:X}:";
             var plugins = ServerApi.Plugins.Select(p => $"{colorTag}{p.Plugin.Name.Replace("]", $"]{colorTag}]")}]");
             var result = string.Join(", ", plugins);
             args.Player.SendInfoMessage(result);
