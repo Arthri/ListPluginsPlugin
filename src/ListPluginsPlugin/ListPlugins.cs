@@ -27,7 +27,7 @@ using TShockAPI;
 namespace ListPluginsPlugin
 {
     [ApiVersion(2, 1)]
-    public class Plugin : TerrariaPlugin
+    public class ListPlugins : TerrariaPlugin
     {
         public override string Name => Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
 
@@ -37,7 +37,7 @@ namespace ListPluginsPlugin
 
         public override string Author => Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCompanyAttribute>().Company;
 
-        public Plugin(Main game) : base(game)
+        public ListPlugins(Main game) : base(game)
         {
 
         }
