@@ -49,10 +49,10 @@ namespace ListPluginsPlugin
             Console.WriteLine($"    This is free software, and you are welcome to redistribute it");
             Console.WriteLine($"    under certain conditions; see {Name}.COPYING for details.");
 
-            Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPlugins, "listplugins", "lplgs"));
+            Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPluginsCommand, "listplugins", "lplgs"));
         }
 
-        private void ListPlugins(CommandArgs args)
+        private void ListPluginsCommand(CommandArgs args)
         {
             // It's in ABGR format
             var color = Color.BlueViolet.packedValue;
