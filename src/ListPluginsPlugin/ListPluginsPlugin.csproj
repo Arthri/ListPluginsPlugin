@@ -42,6 +42,9 @@
     <Reference Include="TerrariaServer">
       <HintPath>..\..\lib\TerrariaServer.exe</HintPath>
     </Reference>
+    <Reference Include="TShockAPI">
+      <HintPath>..\..\lib\TShockAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Plugin.cs" />
