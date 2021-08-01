@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
+using System.Linq;
 using System.Reflection;
 using Terraria;
 using TerrariaApi.Server;
+using TShockAPI;
 
 namespace ListPluginsPlugin
 {
@@ -23,7 +26,14 @@ namespace ListPluginsPlugin
 
         public override void Initialize()
         {
+            Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPlugins, "listplugins", "lplgs"));
+        }
 
+        private void ListPlugins(CommandArgs args)
+        {
+            var plugins = ServerApi.Plugins.Select(p => $"[c/{Color.Purple}:{p.Plugin.Name}]");
+            var result = string.Join(" ,", plugins);
+            args.Player.SendInfoMessage(result);
         }
     }
 }
