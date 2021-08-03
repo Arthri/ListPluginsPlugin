@@ -44,7 +44,7 @@ namespace ListPluginsPlugin
 
         public override void Initialize()
         {
-            Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPluginsCommand, "listplugins", "lplgs"));
+            Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPluginsCommand, "listplugins", "lplgs", "plugins"));
         }
 
         private void ListPluginsCommand(CommandArgs args)
