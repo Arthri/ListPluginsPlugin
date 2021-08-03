@@ -44,11 +44,6 @@ namespace ListPluginsPlugin
 
         public override void Initialize()
         {
-            Console.WriteLine($"    {Name}  Copyright (C) 2021  {Author}");
-            Console.WriteLine($"    This program comes with ABSOLUTELY NO WARRANTY; see {Name}.COPYING for details");
-            Console.WriteLine($"    This is free software, and you are welcome to redistribute it");
-            Console.WriteLine($"    under certain conditions; see {Name}.COPYING for details.");
-
             Commands.ChatCommands.Add(new Command("listpluginsplugin.listplugins", ListPluginsCommand, "listplugins", "lplgs"));
         }
 
